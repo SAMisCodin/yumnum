@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
         <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster&family=Permanent+Marker&display=swap" rel="stylesheet"></link>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
       </Head>
 
       <main>
@@ -66,41 +66,6 @@ export default function Home() {
         <div id="footerDiv">
             <p>This website is ran and owned by YumNum Ltd. Company Number: 14076707. Registered Office: 20-22 Wenlock Road, London, N1 7GU.</p>
         </div>
-        <Script>
-          {`$(window).scroll(function (event) {
-        var myScroll = $("#whatWeDoDivOuter").offset().top - $(window).scrollTop();
-        var myScroll2 = $("#headingHolder").offset().top - $(window).scrollTop();
-        var myScreenWidth = $(window).innerWidth();
-        if(myScreenWidth>1000){
-            if(myScroll<80){
-                $("#myHeader").css({'background-color':'rgba(0,0,0,0.7)'});
-            }
-            else if(myScroll>80){
-                $("#myHeader").css({'background-color':'rgba(0,0,0,0)'});
-            }
-        }
-        else{
-            if(myScroll2<80){
-                $("#myHeader").css({'background-color':'rgba(0,0,0,0.7)'});
-            }
-            else if(myScroll2>80){
-                $("#myHeader").css({'background-color':'rgba(0,0,0,0)'});
-            }
-        }
-    });
-        $("#menuContactBtn").click(function() {
-            var myOffsetVal = $("#contactUsDiv").offset().top - 80;
-            $('html, body').animate({
-                scrollTop: myOffsetVal
-            }, 1000);
-        });
-        $("#menuAboutBtn").click(function() {
-            var myOffsetVal = $("#whatWeDoDivOuter").offset().top - 80;
-            $('html, body').animate({
-                scrollTop: myOffsetVal
-            }, 1000);
-        });`}
-        </Script>
     </div>
       </main>
     </>

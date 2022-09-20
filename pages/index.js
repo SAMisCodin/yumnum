@@ -2,6 +2,23 @@ import Head from 'next/head'
 import Script from 'next/script'
 
 export default function Home() {
+  function menuContactBtn() {
+    var myOffsetVal = document.getElementById("contactUsDiv").offsetTop - 80;
+    window.scrollTo({
+      top: myOffsetVal,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+  function menuAboutBtn() {
+    var myOffsetVal = document.getElementById("whatWeDoDivOuter").offsetTop - 80;
+    window.scrollTo({
+      top: myOffsetVal,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+  
   return (
     <>
       <Head>
@@ -13,7 +30,6 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
         <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster&family=Permanent+Marker&display=swap" rel="stylesheet"></link>
 
-        
       </Head>
 
       <main>
@@ -24,10 +40,10 @@ export default function Home() {
             </div>
             <div id="Menu">
                 <ul>
-                    <li id="menuAboutBtn">
+                    <li id="menuAboutBtn" onClick={menuAboutBtn}>
                         What We Do?
                     </li>
-                    <li id="menuContactBtn">
+                    <li id="menuContactBtn" onClick={menuContactBtn}>
                         Contact Us                        
                     </li>
                 </ul>
@@ -66,6 +82,71 @@ export default function Home() {
         <div id="footerDiv">
             <p>This website is ran and owned by YumNum Ltd. Company Number: 14076707. Registered Office: 20-22 Wenlock Road, London, N1 7GU.</p>
         </div>
+        <Script>
+          {`
+          document.addEventListener("scroll", function() {
+            var myScroll = document.getElementById("whatWeDoDivOuter").offsetTop - window.pageYOffset;
+            var myScroll2 = document.getElementById("headingHolder").offsetTop - window.pageYOffset;
+            var myScreenWidth = window.innerWidth;
+            if(myScreenWidth>1000){
+              if(myScroll<80){
+                document.getElementById("myHeader").style.backgroundColor = 'rgba(0,0,0,0.7)';
+              }
+              else if(myScroll>80){
+                document.getElementById("myHeader").style.backgroundColor = 'rgba(0,0,0,0)';
+              }
+          }
+          else{
+              if(myScroll2<80){
+                document.getElementById("myHeader").style.backgroundColor = 'rgba(0,0,0,0.7)';
+              }
+              else if(myScroll2>80){
+                document.getElementById("myHeader").style.backgroundColor = 'rgba(0,0,0,0)';
+              }
+          }
+
+        });
+        /*$("#menuAboutBtn").click(function() {
+          var myOffsetVal = $("#whatWeDoDivOuter").offset().top - 80;
+          $('html, body').animate({
+              scrollTop: myOffsetVal
+          }, 1000);
+      });
+
+          $(window).scroll(function (event) {
+        var myScroll = $("#whatWeDoDivOuter").offset().top - $(window).scrollTop();
+        var myScroll2 = $("#headingHolder").offset().top - $(window).scrollTop();
+        var myScreenWidth = $(window).innerWidth();
+        if(myScreenWidth>1000){
+            if(myScroll<80){
+                $("#myHeader").css({'background-color':'rgba(0,0,0,0.7)'});
+            }
+            else if(myScroll>80){
+                $("#myHeader").css({'background-color':'rgba(0,0,0,0)'});
+            }
+        }
+        else{
+            if(myScroll2<80){
+                $("#myHeader").css({'background-color':'rgba(0,0,0,0.7)'});
+            }
+            else if(myScroll2>80){
+                $("#myHeader").css({'background-color':'rgba(0,0,0,0)'});
+            }
+        }
+    });
+        $("#menuContactBtn").click(function() {
+            var myOffsetVal = $("#contactUsDiv").offset().top - 80;
+            $('html, body').animate({
+                scrollTop: myOffsetVal
+            }, 1000);
+        });
+        $("#menuAboutBtn").click(function() {
+            var myOffsetVal = $("#whatWeDoDivOuter").offset().top - 80;
+            $('html, body').animate({
+                scrollTop: myOffsetVal
+            }, 1000);
+        });*/`}
+        </Script>
     </div>
       </main>
     </>

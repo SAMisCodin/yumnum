@@ -82,9 +82,7 @@ export default function Home() {
         <div id="footerDiv">
             <p>This website is ran and owned by YumNum Ltd. Company Number: 14076707. Registered Office: 20-22 Wenlock Road, London, N1 7GU.</p>
         </div>
-        <Script>
-          {`
-          document.addEventListener("scroll", function() {
+        <Script id="myCustomScript">{`document.addEventListener("scroll", function() {
             var myScroll = document.getElementById("whatWeDoDivOuter").offsetTop - window.pageYOffset;
             var myScroll2 = document.getElementById("headingHolder").offsetTop - window.pageYOffset;
             var myScreenWidth = window.innerWidth;
@@ -106,46 +104,7 @@ export default function Home() {
           }
 
         });
-        /*$("#menuAboutBtn").click(function() {
-          var myOffsetVal = $("#whatWeDoDivOuter").offset().top - 80;
-          $('html, body').animate({
-              scrollTop: myOffsetVal
-          }, 1000);
-      });
-
-          $(window).scroll(function (event) {
-        var myScroll = $("#whatWeDoDivOuter").offset().top - $(window).scrollTop();
-        var myScroll2 = $("#headingHolder").offset().top - $(window).scrollTop();
-        var myScreenWidth = $(window).innerWidth();
-        if(myScreenWidth>1000){
-            if(myScroll<80){
-                $("#myHeader").css({'background-color':'rgba(0,0,0,0.7)'});
-            }
-            else if(myScroll>80){
-                $("#myHeader").css({'background-color':'rgba(0,0,0,0)'});
-            }
-        }
-        else{
-            if(myScroll2<80){
-                $("#myHeader").css({'background-color':'rgba(0,0,0,0.7)'});
-            }
-            else if(myScroll2>80){
-                $("#myHeader").css({'background-color':'rgba(0,0,0,0)'});
-            }
-        }
-    });
-        $("#menuContactBtn").click(function() {
-            var myOffsetVal = $("#contactUsDiv").offset().top - 80;
-            $('html, body').animate({
-                scrollTop: myOffsetVal
-            }, 1000);
-        });
-        $("#menuAboutBtn").click(function() {
-            var myOffsetVal = $("#whatWeDoDivOuter").offset().top - 80;
-            $('html, body').animate({
-                scrollTop: myOffsetVal
-            }, 1000);
-        });*/`}
+        `}
         </Script>
     </div>
       </main>
